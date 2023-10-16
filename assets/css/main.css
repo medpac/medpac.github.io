@@ -2358,9 +2358,13 @@ input, select, textarea {
 			}
 
 		.icon-wrapper.major {
-			display: block;
-			margin: 1.235em 0 3.235em 0;
+    display: block;
+    margin: 1.235em 0 3.235em 0;
+    color: #21b684;
 		}
+.content .icon-wrapper.major .icon.solid.fa-pencil-alt {
+}
+
 
 		.icon-wrapper.small {
 			font-size: 0.75em;
@@ -2707,7 +2711,7 @@ input, select, textarea {
 			}
 
 	ul.menu li {
-		border-left-color: #e6e6e6;
+		border-left-color: #21b684;
 	}
 
 /* Pagination */
@@ -2769,7 +2773,7 @@ input, select, textarea {
 		}
 
 		ul.pagination li > .page.active:active {
-			background-color: #373737;
+			background-color: #21b684;
 		}
 
 /* Post */
@@ -3040,11 +3044,11 @@ input, select, textarea {
 	}
 
 		table tbody tr:nth-child(2n + 1) {
-			background-color: #f6f6f6;
+			background-color: #1093cd;
 		}
 
 	table th {
-		color: #444;
+		color: #21b684;
 	}
 
 	table thead {
@@ -3123,7 +3127,7 @@ input, select, textarea {
 					}
 
 		.wrapper.style1 {
-			background-color: #444;
+			background-color: #21b684;
 			color: #fff;
 			border-top: 0;
 		}
@@ -3194,7 +3198,7 @@ input, select, textarea {
 				.wrapper.style1 .button.primary {
 					box-shadow: none;
 					background-color: #fff;
-					color: #444 !important;
+					color: #21b684 !important;
 				}
 
 			.wrapper.style1 .features > section:before {
