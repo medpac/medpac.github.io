@@ -1,293 +1,144 @@
-<!DOCTYPE HTML>
-<!--
-	Slate by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
--->
-<html>
-	<head>
-		<title>Untitled</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample AI Services Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      padding-top: 3.5rem; /* Buffer to push content down */
+      padding-bottom: 4rem; /* Space at the bottom equal to the height of the opacity bar */
+    }
+  
 
-	<body class="is-preload">
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+  }
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<h1><img src="images/Logo.png" alt="" /><!--<a href="index.html">FIRST STEP <span>HEALTH SOLUTIONS</span></a>--></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="elements.html">NALOXONE KITS</a></li>
-						<li>
-							<a href="#" class="submenu fa-angle-down">DRUGS
-</a>
-							<ul>
-								<li><a href="left-sidebar.html">Kids</a></li>
-								<li><a href="right-sidebar.html">Over the counter</a></li>
-								
-							</ul>
-						</li>
-						<li><a href="elements.html">CUSTOM KITS</a></li>
-						<li><a href="#" class="button">CONTACT</a></li>
-					</ul>
-				</nav>
-			</header>
+  .nav-links a {
+    font-family: 'Open Sans', sans-serif;
+  }
 
-		<!-- Banner -->
-			<section id="banner">
-				<article>
-					<img src="images/slide01.jpg" alt="" />
-					<div class="inner">
-						<h2><a href="#">The Leading Canadian Producer of Naloxone Kits</a></h2>
-					</div>
-				</article>
-				<article>
-					<img src="images/slide02.jpg" alt="" />
-					<div class="inner">
-						<h2><a href="#">Customized Kit options depending on your specific needs.</a></h2>
-					</div>
-				</article>
-				<article>
-					<img src="images/slide03.jpg"  alt="" />
-					<div class="inner">
-						<h2><a href="#">Order Kits Now</a></h2>
-					</div>
-				</article>
-			</section>
+  .feature {
+    padding: 15px; /* Add padding for text */
+  }
 
-		<!-- One -->
-			<section id="one" class="wrapper major-pad">
-				<div class="inner">
-					<section class="spotlight">
-						<div class="content">
-							<h2>What is Naloxone?</h2>
-							<p>Naloxone is a medication that can temporarily reverse the effects of an opioid overdose and allow time for medical help to arrive. Naloxone is an opioid antagonist. This means it blocks the effects of opioids such as heroin, fentanyl, oxycodone, and hydrocodone. It can restore normal breathing to a person whose breathing has shallowed or stopped as a result of an overdose.</p>
-						</div>
-						<span class="image"><img src="images/pic07.jpg" alt="" /></span>
-					</section>
-				</div>
-			</section>
+  .feature-image {
+    max-width: calc(100% + 30px); /* Counteract padding with additional width */
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+    margin-left: 0px;  /* Negative margin to counteract padding */
+    margin-right: 0px; /* Negative margin to counteract padding */
+  }
+  
+</style>
+</head>
+<body>
 
-		<!-- Two -->
-			<section id="two" class="wrapper content-pad">
-				<div class="inner">
-					<div class="features">
-						<section class="content">
-							<span class="icon-wrapper major"><span class="icon solid fa-pencil-alt"></span></span>
-							<h3 style="color: #1093cd">Vision</h3>
-							<p>To be an innovative Partner in the Dynamic Canadian Healthcare Setting.</p>
-						</section>
-						<section class="content">
-							<span class="icon-wrapper major"><span class="icon solid fa-rocket"></span></span>
-							<h3 style="color: #1093cd">Mission</h3>
-							<p>Seek new challenges in healthcare and provide unique solutions for our patients.</p>
-						</section>
-						<section class="content">
-							<span class="icon-wrapper major"><span class="icon solid fa-heart"></span></span>
-							<h3 style="color: #1093cd">Values</h3>
-							<p>Integrity. Accountability. Caring. Respect</p>
-						</section>
-					</div>
-				</div>
-			</section>
+  <header>
 
-		<!-- Three -->
-			<section id="three" class="wrapper style2">
-				<div class="inner">
-					<h2>Naloxone Kits</h2>
-					<div class="posts">
-						<section class="post">
-							<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Alberta</h3>
-								<p><!--Aenean ultricies magna non sapien rhoncus, ac ullamcorper lorem convallis. Quisque at venenatis nisi, amet finibus mauris. Sed sodales ultricies eros, sit amet sodales sapien.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post">
-							<span class="image"><img src="images/pic02.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Correction Canada</h3>
-								<p><!--Ultrices nec metus. Aenean ultricies magna et sapien rhoncus ac ullamcorper lorem convallis. Quisque at venenatis nisi amet finibus mauris. Sed sodales ultricies magna etiam.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post">
-							<span class="image"><img src="images/pic03.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Manitoba</h3>
-								<p><!--Quis interdum. Lorem quis lacus justo. Sed libero condimentum vehicula sem vel, mattis amet mauris. Nullam lacinia sit amet felis vel vestibulum. Morbi aliquam aenean.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post">
-							<span class="image"><img src="images/pic04.jpg" alt="" /></span>
-							<div class="content">
-								<h3>New Brunswick</h3>
-								<p><!--Integer vel tincidunt lacus. Nulla augue nunc, eleifend quis leo ac, maximus interdum tellus. Etiam at vestibulum felis, id efficitur risus. Praesent ac nulla ex. Duis elementum.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post">
-							<span class="image"><img src="images/pic05.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Ontario Injection</h3>
-								<p><!--Libero condimentum, vehicula sem vel, mattis mauris. Nullam lacinia sit amet felis vel vestibulum. Morbi in aliquam est. Aenean dapibus porttitor nulla ultrices venenatis.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post">
-							<span class="image"><img src="images/pic06.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Ontario Nasal</h3>
-								<p><!--Tristique tellus et ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent mauris risus, pellentesque eu leo non, tincidunt.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-												<section class="post">
-							<span class="image"><img src="images/pic04.jpg" alt="" /></span>
-							<div class="content">
-								<h3>PEI</h3>
-								<p><!--Integer vel tincidunt lacus. Nulla augue nunc, eleifend quis leo ac, maximus interdum tellus. Etiam at vestibulum felis, id efficitur risus. Praesent ac nulla ex. Duis elementum.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post">
-							<span class="image"><img src="images/pic09.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Saskatchewan</h3>
-								<p><!--Libero condimentum, vehicula sem vel, mattis mauris. Nullam lacinia sit amet felis vel vestibulum. Morbi in aliquam est. Aenean dapibus porttitor nulla ultrices venenatis.--></p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>
-						</section>
-						<section class="post"><!--
-							<span class="image"><img src="images/pic06.jpg" alt="" /></span>
-							<div class="content">
-								<h3>Ontario Nasal</h3>
-								<p>Tristique tellus et ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent mauris risus, pellentesque eu leo non, tincidunt.</p>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</div>-->
-						</section>
-					</div>
-				</div>
-			</section>
 
-		<!-- Contact -->
-			<section id="contact" class="wrapper split">
-				<div class="inner">
-					<section>
-						<h2>Send us a message</h2>
-						<form method="post" action="#">
-							<div class="row gtr-uniform">
-								<div class="col-6 col-12-large col-6-medium col-12-xsmall">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="col-6 col-12-large col-6-medium col-12-xsmall">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="col-12">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="5"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-					<section>
-						<h2>Other ways to reach us</h2>
-						<ul class="bulleted-icons">
-							<li>
-								<span class="icon-wrapper"><span class="icon solid fa-envelope"></span></span>
-								<h3>Email</h3>
-								<p><a href="#">Info@FirstStepMedical.com</a></p>
-							</li>
-							<li><!--
-								<span class="icon-wrapper"><span class="icon brands fa-twitter"></span></span>
-								<h3>Twitter</h3>
-								<p><a href="#">twitter.com/untitled-tld</a></p>-->
-							</li>
-							<li>
-								<span class="icon-wrapper"><span class="icon solid fa-phone"></span></span>
-								<h3>Phone</h3>
-								<p>1 (888) 729-4575
+    <div class="logo">
+      <img src="images/ClinicChecklist_Transparent_Logo.png" alt="AI Company Logo" class="header-logo">
+    </div>
 
-</p>
-							</li>
-							<li><!--
-								<span class="icon-wrapper"><span class="icon brands fa-facebook-f"></span></span>
-								<h3>Facebook</h3>
-								<p><a href="#">facebook.com/untitled-tld</a></p>-->
-							</li>
-							<li>
-								<span class="icon-wrapper"><span class="icon solid fa-home"></span></span>
-								<h3>Mailing Address</h3>
-								<p>First Step Health Solutions Inc.
+    <nav>
+      <div class="logo"></div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<br />
-125 Norfinch Drive, Suite 201,
-<br />
-								Toronto, ON, M3N 1W8
-								</p>
-							</li>
-							<li><!--
-								<span class="icon-wrapper"><span class="icon brands fa-linkedin-in"></span></span>
-								<h3>LinkedIn</h3>
-								<p><a href="#">linkedin.com/untitled-tld</a></p>-->
-							</li>
-						</ul>
-					</section>
-				</div>
-			</section>
+<!-- Hero Section with Interactive Elements -->
+<section class="hero">
+  <h1 class="animate-title">Empower Your Clinic with Checklist Butler</h1>
+  <p class="animate-text">Transforming medical clinic operations with smart checklist management.</p>
+  <button class="cta-button animate-button">Explore Features</button>
+  <button class="cta-button animate-button">Request Demo</button>
+</section>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<p class="copyright">&copy; ©2019 First Step Health Solutions Inc.</p>
-					<ul class="menu">
-						<li><a href="#">Terms<span> of Use</span></a></li>
-						<li><a href="#">Privacy<span> Policy</span></a></li>
-						<li><a href="#">Legal<span> Information</span></a></li>
-					</ul>
-				</div>
-			</footer>
+  
+<!-- Features Overview -->
+<section class="features-overview">
+  <h2>Features That Set Us Apart</h2>
+  <div class="features-container">
+    <!-- Feature 1: Customizable Checklists -->
+    <div class="feature">
+      <img src="images/customizable_checklists.png" alt="Customizable Checklists">
+      <h3>Customizable Checklists</h3>
+      <p>Tailor your checklists to fit your unique clinical workflows.</p>
+    </div>
+    <!-- More features... -->
+  </div>
+</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-	</body>
+<!-- Detailed Features Breakdown -->
+<section class="detailed-features">
+  <h2>Detailed Features</h2>
+  <!-- Feature: Mandatory Fields in Forms -->
+  <div class="detailed-feature">
+    <h3>Mandatory Fields in Forms</h3>
+    <p>Ensure critical data is captured with mandatory fields in all forms.</p>
+  </div>
+  <!-- More detailed features... -->
+</section>
+
+
+
+<section class="features">
+  <div class="feature">
+    <h2>Maximize Productivity</h2>
+    <p>Our shared inb1ox is AI-enhanced and designed for speed and efficiency—so your team can work smarter and collaborate faster.</p>
+    <img src="images/feature_card1.png" class="feature-image">
+  </div>
+  <div class="feature">
+    <h2>Better Tickets</h2>
+    <p>Resolve complex issues quickly with tickets optimized for team collaboration and real-time customer updates.</p>
+  </div>
+  <div class="feature">
+    <h2>Help Your Customers</h2>
+    <p>Connect your help center across the entire platform—so your customers can find the most accurate answers when and where they need them.</p>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonial">
+    <p>"Within six days, our AI has been successfully resolving 42% of conversations. It's truly surpassed my expectations."</p>
+    <p>- Jane Doe, Customer Support Director</p>
+  </div>
+  <!-- Add more testimonials here -->
+</section>
+
+
+<footer>
+  <p>&copy; 2023 AI Company. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<div class="bottom-logo-container">
+  <img src="images/Org_Transparent_Logo.png" alt="Second Logo" class="bottom-logo">
+</div>
+<div class="opacity-bar">
+
+</div>
+
+
+</body>
 </html>

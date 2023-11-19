@@ -1,0 +1,213 @@
+:root {
+  --primary-color: rgb(92, 137, 196);
+  --secondary-color: rgba(114, 229, 152, 0.924);
+  --font-family: 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  z-index: 1000; /* Ensures it stays on top */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
+}
+
+.header-logo {
+  width: auto; /* A moderate width */
+  height: 2.0rem; /* Maintain aspect ratio */
+  opacity: 1; /* Adjust for desired transparency */
+  position: fixed; /* Fixed position on the page */
+  top: .6rem; /* Slightly more space from the top */
+  left: 15px; /* Slightly more space from the left */
+  z-index: 1000; /* Ensures the logo stays on top of other elements */
+  
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.hero {
+  background: #f9fafb;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+button {
+  background: var(--secondary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.testimonials {
+  background: #edf2f7;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer {
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Non-Mobile Styles */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.feature {
+  max-width: 30%;
+  background: linear-gradient(to bottom, #9ec6db, #9e93d6); /* Slight gradient from white to light gray */
+  padding: 1rem 1rem 1rem 1rem; /* More padding at the top, slight padding on other sides */
+  overflow: hidden; /* Ensures the image does not overflow the container */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 0px solid #878787; /* Mild border */
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.feature-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: calc(100% + 2rem); /* Adjust width to cover the side padding */
+  margin-top: 1rem; /* Negative margin to pull the image to the top edge */
+  margin-left: 0rem; /* Negative margin to offset the side padding */
+  margin-right: 0rem; /* Negative margin to offset the side padding */
+}
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #fff;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .header-logo {
+    width: auto; /* Smaller width for mobile devices */
+    height: 2rem;
+    top: .8rem;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0; /* Adjust padding for mobile view */
+  }
+
+  .feature {
+    width: 90%; /* Full width for mobile screens */
+    max-width: 95%; /* Ensures that max-width is not restricting the width */
+  }
+}
+
+.bottom-logo-container {
+  position: fixed;
+  left: 0;
+  right: 0; /* Stretch across the full width */
+  bottom: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 4rem; /* Match the height of the opacity bar */
+  z-index: 1001;
+}
+
+.bottom-logo {
+  width: auto; /* Set the width of the logo */
+  height: 3.5rem; /* Maintain aspect ratio */
+  opacity: 1; /* Adjust for desired transparency */
+}
+
+.opacity-bar {
+  position: fixed; /* Fixed position */
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Full width of the viewport */
+  height: 4rem; /* Height of the bar */
+  background-color: rgb(228, 228, 228);
+  opacity: 0.7; /* 40% opacity */
+  z-index: 1000; /* Place it just below the logo */
+}
