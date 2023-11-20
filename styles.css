@@ -106,7 +106,40 @@ footer {
   padding: 1rem;
 }
 
-/* Non-Mobile Styles */
+.ticker {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding-right: 25px; /* Space between items */
+  font-size: 16px; /* Adjust size as needed */
+  /* Additional styling as needed */
+}
+
+.ticker-item img {
+  height: 95px; /* Adjust image size as needed */
+  width: auto;
+}
+
+@keyframes tickerMove {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.ticker {
+  animation: tickerMove 20s linear infinite; /* Adjust the duration for speed */
+}
+
+
+/* Non-Mobile Styles (Base Styles)*/
+
 .features {
   display: flex;
   justify-content: space-around;
@@ -125,6 +158,24 @@ footer {
   margin-bottom: 1rem;
 }
 
+.keyfeatures {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.keyfeature {
+  max-width: 30%;
+  background: linear-gradient(to bottom, #dbb59e, #ccd693); /* Slight gradient from white to light gray */
+  padding: 1rem 1rem 1rem 1rem; /* More padding at the top, slight padding on other sides */
+  overflow: hidden; /* Ensures the image does not overflow the container */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 0px solid #878787; /* Mild border */
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
 .feature-image {
   max-width: 100%;
   height: auto;
@@ -135,12 +186,111 @@ footer {
   margin-right: 0rem; /* Negative margin to offset the side padding */
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  padding: 0 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 40px; /* Adjust size as needed */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex; /* Initially hidden */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600; /* Adjust weight as needed */
+}
+
+.nav-links a:hover {
+  color: #5c6ac4; /* Adjust hover color as needed */
+}
+
+.cta-buttons {
+  display: flex;
+}
+
+.cta-button {
+  padding: 10px 20px; /* Increased horizontal padding */
+  background-color: #0057FF; /* Primary button color */
+  color: white;
+  border: none;
+  border-radius: 20px; /* High border-radius for pill shape */
+  cursor: pointer;
+  text-transform: uppercase; /* Optional: for uppercase text */
+  font-weight: bold; /* Optional: for bold text */
+  margin-left: 10px;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+
+}
+
+.cta-button.demo {
+  background-color: transparent;
+  background-color: #3e3e3e; /* Primary button color */
+  color: white;  
+  border: 2px solid #ffffff;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.cta-link {
+  background-color: #5c6ac4; /* Adjust CTA button color */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+  .hamburger-menu {
+    display: block;
+  }
+.hamburger-menu {
+  display: block; /* Show hamburger menu for mobile */
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 768px) {
+  .nav-links {
+    display: flex; /* Show full navigation on desktop */
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
+  .hamburger-menu {
+    display: none; /* Hide hamburger menu on desktop */
+  }
+}
 
 
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-  .nav-links {
+  .nav-links,
+  .cta-buttons {
     position: absolute;
     right: 0;
     top: 60px;
@@ -151,6 +301,8 @@ footer {
     text-align: center;
   }
 
+  
+
   .nav-links li {
     margin: 15px 0;
   }
@@ -158,6 +310,7 @@ footer {
   .nav-links.active {
     display: flex;
   }
+
 
   .header-logo {
     width: auto; /* Smaller width for mobile devices */
@@ -181,6 +334,18 @@ footer {
     width: 90%; /* Full width for mobile screens */
     max-width: 95%; /* Ensures that max-width is not restricting the width */
   }
+
+  .keyfeatures {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0; /* Adjust padding for mobile view */
+  }
+
+  .keyfeature {
+    width: 90%; /* Full width for mobile screens */
+    max-width: 95%; /* Ensures that max-width is not restricting the width */
+  }
+
 }
 
 .bottom-logo-container {
