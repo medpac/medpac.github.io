@@ -17,3 +17,11 @@ window.addEventListener('scroll', function() {
 
 
 
+  window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50); // Adjust '50' to the desired scroll amount
+  });
+
+
+
+

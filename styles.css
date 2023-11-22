@@ -39,7 +39,9 @@ header {
 
 /* Scrolled header style */
 header.scrolled {
-  background: white;
+    border: none;
+    box-shadow: none;
+    /* other styles */
 }
 
 .header-logo {
@@ -57,6 +59,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #003366; /* Dark blue color for the background */
+  border: none;
 }
 
 .nav-links {
@@ -67,7 +71,7 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: white !important;
 }
 
 .hamburger-menu {
@@ -231,8 +235,13 @@ footer {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #white;
   font-weight: 600; /* Adjust weight as needed */
+}
+
+/* If you have other text elements, apply the same specificity increase */
+nav .logo, .cta-buttons, .hamburger-menu .bar {
+  color: white !important; /* This sets the color of text to white */
 }
 
 .nav-links a:hover {
@@ -590,5 +599,9 @@ footer {
       align-self: flex-end;
   }
 }
+
+
+
+
 
 
