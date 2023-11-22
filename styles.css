@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', serif;
 }
 
+h1 {
+  font-size:36
+}
+
 header {
   position: fixed;
   top: 0;
@@ -27,7 +31,15 @@ header {
   color: white;
   padding: 1rem;
   z-index: 1000; /* Ensures it stays on top */
+  background: transparent; /* or any initial background */
+  background-color: #003366; /* Dark blue color */
+
   transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
+}
+
+/* Scrolled header style */
+header.scrolled {
+  background: white;
 }
 
 .header-logo {
@@ -73,16 +85,21 @@ nav {
 
 .hero {
   background: #f9fafb;
+  background-color: #003366; /* Dark blue color */
   padding: 2rem;
   text-align: center;
 }
 
 .hero h1 {
   margin-bottom: 0.5rem;
+  color: white; /* or a light color for better visibility */
+
+
 }
 
 .hero p {
   margin-bottom: 1rem;
+  color:white
 }
 
 button {
@@ -228,7 +245,7 @@ footer {
 
 .cta-button {
   padding: 10px 20px; /* Increased horizontal padding */
-  background-color: #0057FF; /* Primary button color */
+  background-color: rgb(57, 113, 69); /* Primary button color */
   color: white;
   border: none;
   border-radius: 20px; /* High border-radius for pill shape */
@@ -376,3 +393,202 @@ footer {
   opacity: 0.7; /* 40% opacity */
   z-index: 1000; /* Place it just below the logo */
 }
+
+/* Pricing */
+
+.pricing {
+  text-align: center;
+  padding: 2rem;
+}
+
+.pricing table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing th, .pricing td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.pricing th {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+.pricing td {
+  background: linear-gradient(to right, #ffffff, #f1f1f1);
+}
+
+.pricing tr:nth-child(even) {
+  background: linear-gradient(to right, #f9f9f9, #f1f1f1);
+}
+
+.pricing tr:hover {
+  background-color: #f2f2f2;
+}
+
+.check-mark {
+  color: green;
+}
+
+.cross-mark {
+  color: red;
+}
+
+/* Feature cards */
+
+.feature-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.feature-section h2 {
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.feature-section p {
+  color: #222222;
+  margin-bottom: 2rem;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.feature-card {
+  background: linear-gradient(to right, #a3b8e8 0%, #a1c7b1 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: calc(33.333% - 1rem); /* Adjust the width for 3 cards per row */
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+  
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.feature-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+}
+
+.feature-card p {
+  color: #666;
+}
+
+/* ... your other CSS ... */
+
+.feature-carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.feature-cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .feature-cards {
+    flex-direction: column;
+    flex: 0 0 auto; /* Do not grow or shrink */
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .feature-card {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* Top Banner */
+
+.top-banner {
+  background: linear-gradient(45deg, #007bff, #5c6ac4, #9ec6db); /* Replace with your chosen colors */
+  color: #fff;
+  padding: 15px;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 1001; /* Ensure it stays on top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dismiss-banner {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 20px; /* Space from content */
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 40px); /* Adjust based on total horizontal padding */
+  justify-content: space-between;
+}
+
+.banner-image {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 20px;
+}
+
+.action-button {
+  background-color: #007bff; /* Customize color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+@media (max-width: 600px) {
+  .top-banner {
+      flex-direction: none;
+      align-items: start;
+      padding: 15px;
+  }
+
+  .banner-content {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 10px;
+  }
+
+  .dismiss-banner {
+      align-self: flex-end;
+  }
+}
+
+
