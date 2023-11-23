@@ -23,5 +23,30 @@ window.addEventListener('scroll', function() {
   });
 
 
+/* JavaScript for Carousel Functionality */
+
+  document.addEventListener('DOMContentLoaded', function() {
+    let scrollPosition = 0;
+    const featureCarousel = document.querySelector('.feature-cards-container');
+    const indicators = document.querySelectorAll('.dot');
+  
+    featureCarousel.addEventListener('scroll', function() {
+      let index = Math.round(this.scrollLeft / window.innerWidth);
+      if (scrollPosition !== index) {
+        indicators[scrollPosition].classList.remove('active');
+        indicators[index].classList.add('active');
+        scrollPosition = index;
+      }
+    });
+  
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        featureCarousel.scrollLeft = index * window.innerWidth;
+      });
+    });
+  });
+  
+
+
 
 
