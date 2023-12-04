@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwashing Audit Compliance Training</title>
+    <!-- Add your CSS file link here -->
+</head>
+<body>
+    <header>
+        <img src="path-to-your-logo.png" alt="Clinic Logo">
+        <h1>Handwashing Audit Compliance Training</h1>
+        <p>Welcome to our interactive handwashing training module.</p>
+    </header>
+
+    <section id="welcome">
+        <h2>Welcome [User’s Name]</h2>
+        <p>This training is crucial for maintaining our high health and safety standards.</p>
+    </section>
+
+    <section id="instructions">
+        <div class="hover-instructions">
+            <h3>Instructions</h3>
+            <p>Hover over here for a step-by-step guide.</p>
+            <!-- Add your hoverable content here -->
+        </div>
+    </section>
+
+    <section id="training-module">
+        <h3>Training Module</h3>
+        <!-- Embed your training content here -->
+        <div class="progress-bar">
+            <!-- Progress bar goes here -->
+        </div>
+    </section>
+
+  <section id="quiz">
+        <h3>Quiz</h3>
+        <div id="score" class="score">Correct Answers: 0</div>
+        <form id="quiz-form">
+            <div class="question">
+                <p>Question 1: How long should you wash your hands?</p>
+                <input type="radio" id="q1a" name="question1" value="20 seconds"><label for="q1a">20 seconds</label><br>
+                <input type="radio" id="q1b" name="question1" value="5 seconds"><label for="q1b">5 seconds</label><br>
+                <span class="feedback" id="feedback1"></span>
+            </div>
+            <div class="question">
+                <p>Question 2: What temperature should the water be?</p>
+                <input type="radio" id="q2a" name="question2" value="Cold"><label for="q2a">Cold</label><br>
+                <input type="radio" id="q2b" name="question2" value="Warm"><label for="q2b">Warm</label><br>
+                <span class="feedback" id="feedback2"></span>
+            </div>
+            <!-- Add more questions as needed -->
+            <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+        </form>
+    </section>
+
+    <section id="attestation">
+        <h3>Attestation of Completion</h3>
+        <form id="attestation-form">
+            <input type="checkbox" id="attest" name="attest">
+            <label for="attest">I attest that I have completed and understood the training.</label>
+            <br><br><b>
+            <button id="attestation-button" onclick="submitAttestation()" disabled>Submit Attestation</button>
+            Please note that you will not be able to "Submit Attestation" unless all quiz answers are answered correctly, and/or until you have read and understood all explanations on incorrect asnwers.
+        </b>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; ©2023 Kinetix Medicine.  All rights reserved.</p>
+        <!-- Add other footer elements here -->
+    </footer>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
