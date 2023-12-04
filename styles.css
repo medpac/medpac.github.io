@@ -1,25 +1,32 @@
 :root {
-  --primary-color: rgb(92, 137, 196);
-  --secondary-color: rgba(114, 229, 152, 0.924);
+  --primary-color: rgb(0, 123, 255); /* Vibrant blue */
+  --secondary-color: rgb(40, 167, 69); /* Lush green */
+  --accent-color: rgb(255, 193, 7); /* Warm yellow */
   --font-family: 'Arial', sans-serif;
+  --button-font-size: 18px;
+  --button-padding: 10px 20px;
+  --button-border-radius: 5px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4; /* Light gray background for contrast */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', serif;
+  color: #333; /* Darker color for better readability */
 }
 
 h1 {
-  font-size:36
+  font-size: 2.5rem; /* Larger font size for header */
 }
 
 header {
@@ -29,10 +36,10 @@ header {
   width: 100%;
   background: var(--primary-color);
   color: white;
-  padding: 3.5rem;
+  padding: 2rem 1rem;
   z-index: 1000; /* Ensures it stays on top */
   background: transparent; /* or any initial background */
-  background-color: #003366; /* Dark blue color */
+  background-color: var(--primary-color);
 
   transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
 }
@@ -124,12 +131,37 @@ nav {
 }
 
 button {
-  background: var(--secondary-color);
+  background-color: #ff6f61; /* Gumroad's signature button color */
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: background-color 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase; /* Optional: For uppercase text */
+  letter-spacing: 1px; /* Optional: For more spaced lettering */
 }
+
+button:hover, button:focus {
+  background-color: #e85b50; /* Slightly darker shade on hover/focus */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+button:active {
+  background-color: #cc5040; /* Even darker for active/clicked state */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Less pronounced shadow */
+}
+
+button:disabled {
+  background-color: #cccccc; /* Muted color for disabled state */
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
 
 .testimonials {
   background: #edf2f7;
@@ -137,7 +169,25 @@ button {
   text-align: center;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main-content {
+  min-height: 100%;
+  /* Equal to footer height */
+  padding-bottom: 50px; /* Adjust based on the footer height */
+  box-sizing: border-box;
+}
+
+
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Adjust based on the footer height */
   background: var(--primary-color);
   color: white;
   text-align: center;
@@ -618,6 +668,7 @@ footer {
 /* for Questionnaire */
 body {
   font-family: Arial, sans-serif;
+  padding-top: 100px; /* Adjust this value based on the actual height of your header */
 }
 
 header, section {
@@ -645,13 +696,13 @@ header, section {
 
 .score {
   position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f0f0f0;
+  right: 20px;
+  bottom: 60px; /* Adjust so it's above the footer */
+  font-size: 20px; /* Larger font size */
+  background-color: #f8f8f8; /* Background color for visibility */
   padding: 5px;
-  border: 1px solid #ddd;
-  z-index: 1000;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:disabled {
@@ -666,3 +717,11 @@ button:disabled {
   display: none; /* Initially hidden */
 }
 
+#valid-code-message, #invalid-code-message {
+  font-size: 1.4rem; /* Larger font size for messages */
+}
+
+.nav-links li a {
+  {
+  background-color: darken(var(--secondary-color), 10%);
+}
