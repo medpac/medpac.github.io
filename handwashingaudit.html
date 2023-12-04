@@ -39,6 +39,7 @@
         }
         return (sum % 10) === 0;
     }
+<<<<<<< HEAD
     
     function getQueryParam(param, queryString) {
         var searchParams = new URLSearchParams(queryString);
@@ -48,6 +49,21 @@
         window.onload = function() {
             var userEmail = getQueryParam("email");
             var authCode = getQueryParam("code");
+=======
+    
+    function getQueryParam(param, queryString) {
+        var searchParams = new URLSearchParams(queryString);
+        return searchParams.get(param);
+    }
+    
+        window.onload = function() {
+            var fullUrl = window.location.href;
+            var queryPart = fullUrl.split('?')[1]; // Get the part after the first '?'
+            var relevantPart = queryPart.split('?')[0]; // Get the part before the second '?'
+            var userEmail = getQueryParam("email");
+            var authCode = getQueryParam("code");
+    
+>>>>>>> parent of dfd7ded (Update handwashingaudit.html)
             if (userEmail && authCode && isValidCode(authCode)) {
                 document.getElementById('user-email').textContent = userEmail;
                 document.getElementById('code').textContent = authCode;
@@ -58,10 +74,13 @@
         };
     </script>
     
+<<<<<<< HEAD
 
 
 
 <p>Code: <span id="displayCode"></span></p>
+=======
+>>>>>>> parent of dfd7ded (Update handwashingaudit.html)
 
 
     <section id="welcome">
