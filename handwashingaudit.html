@@ -23,47 +23,36 @@
 
     <script>
         function isValidCode(code) {
-        // Simple Luhn Algorithm Check
-        var sum = 0;
-        var alt = false;
-        for (var i = code.length - 1; i >= 0; i--) {
-            var num = parseInt(code.charAt(i), 10);
-            if (alt) {
-                num *= 2;
-                if (num > 9) {
-                    num -= 9;
+            // Simple Luhn Algorithm Check
+            var sum = 0;
+            var alt = false;
+            for (var i = code.length - 1; i >= 0; i--) {
+                var num = parseInt(code.charAt(i), 10);
+                if (alt) {
+                    num *= 2;
+                    if (num > 9) {
+                        num -= 9;
+                    }
                 }
+                sum += num;
+                alt = !alt;
             }
-            sum += num;
-            alt = !alt;
+            return (sum % 10) === 0;
         }
-        return (sum % 10) === 0;
-    }
-<<<<<<< HEAD
     
-    function getQueryParam(param, queryString) {
-        var searchParams = new URLSearchParams(queryString);
-        return searchParams.get(param);
-    }
-    
-        window.onload = function() {
-            var userEmail = getQueryParam("email");
-            var authCode = getQueryParam("code");
-=======
-    
-    function getQueryParam(param, queryString) {
-        var searchParams = new URLSearchParams(queryString);
-        return searchParams.get(param);
-    }
+        function getQueryParam(param, queryString) {
+            var searchParams = new URLSearchParams(queryString);
+            return searchParams.get(param);
+        }
     
         window.onload = function() {
             var fullUrl = window.location.href;
             var queryPart = fullUrl.split('?')[1]; // Get the part after the first '?'
             var relevantPart = queryPart.split('?')[0]; // Get the part before the second '?'
-            var userEmail = getQueryParam("email");
-            var authCode = getQueryParam("code");
     
->>>>>>> parent of dfd7ded (Update handwashingaudit.html)
+            var userEmail = getQueryParam("email", relevantPart);
+            var authCode = getQueryParam("code", relevantPart);
+    
             if (userEmail && authCode && isValidCode(authCode)) {
                 document.getElementById('user-email').textContent = userEmail;
                 document.getElementById('code').textContent = authCode;
@@ -74,13 +63,7 @@
         };
     </script>
     
-<<<<<<< HEAD
-
-
-
-<p>Code: <span id="displayCode"></span></p>
-=======
->>>>>>> parent of dfd7ded (Update handwashingaudit.html)
+    
 
 
     <section id="welcome">
