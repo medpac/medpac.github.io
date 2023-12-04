@@ -659,3 +659,10 @@ button:disabled {
   color: #666666;
   cursor: not-allowed;
 }
+
+#valid-code-message {
+  color: green;
+  font-size: 30px;
+  display: none; /* Initially hidden */
+}
+

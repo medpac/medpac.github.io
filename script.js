@@ -141,3 +141,71 @@ window.onload = function() {
   
 };
 
+function getQueryParam(param, queryString) {
+  var searchParams = new URLSearchParams(queryString);
+  return searchParams.get(param);
+}
+
+
+// Function to check if a code is valid (Luhn Algorithm)
+function isValidCode(code) {
+  var sum = 0;
+  var alt = false;
+  for (var i = code.length - 1; i >= 0; i--) {
+      var num = parseInt(code.charAt(i), 10);
+      if (alt) {
+          num *= 2;
+          if (num > 9) {
+              num -= 9;
+          }
+      }
+      sum += num;
+      alt = !alt;
+  }
+  return (sum % 10) === 0;
+}
+
+// DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+  // ... existing logic for hamburger menu, scroll effect, carousel
+
+  // URL parsing and message display logic
+  var fullUrl = window.location.href;
+
+  // Check if URL ends with '=' and remove it
+  if (fullUrl.endsWith('=')) {
+      fullUrl = fullUrl.substring(0, fullUrl.length - 1);
+  }
+
+  var queryPart = fullUrl.split('?')[1];
+  var relevantPart = queryPart ? queryPart.split('?')[0] : "";
+
+  var userEmail = getQueryParam("email", relevantPart);
+  var authCode = getQueryParam("code", relevantPart);
+
+  if (userEmail && authCode && isValidCode(authCode)) {
+      document.getElementById('user-email').textContent = userEmail;
+      document.getElementById('code').textContent = authCode;
+      document.getElementById('valid-code-message').style.display = 'block';
+  } else {
+      document.getElementById('invalid-code-message').style.display = 'block';
+  }
+
+  // Event listeners for quiz and attestation
+  document.getElementById('quiz-form').addEventListener('change', function() {
+      checkAttestationEligibility();
+      checkIfAllAnswered();
+  });
+
+  document.getElementById('attest').addEventListener('change', function() {
+      checkAttestationEligibility();
+  });
+
+  document.getElementById('submit-quiz').addEventListener('click', checkAnswers);
+});
+
+// Additional scroll event listener
+window.addEventListener('scroll', function() {
+  // ... existing logic for header opacity on scroll
+});
+
