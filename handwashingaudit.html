@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwashing Audit Compliance Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #invalid-code-message {
+            color: red;
+            font-size: 30px;
+            display: none; /* Initially hidden */
+        }
+
+        button {
+            background-color: var(--secondary-color); /* Vibrant button color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/images/logos/ClinicChecklist_Logo_Color.png" alt="Clinic Logo" style="max-width: 250px;">
+        <h1>Handwashing Audit Compliance Training</h1>
+        <p>Welcome to our interactive handwashing training module.</p>
+    </header>
+
+
+    <script>
+        function isValidCode(code) {
+            // Simple Luhn Algorithm Check
+            var sum = 0;
+            var alt = false;
+            for (var i = code.length - 1; i >= 0; i--) {
+                var num = parseInt(code.charAt(i), 10);
+                if (alt) {
+                    num *= 2;
+                    if (num > 9) {
+                        num -= 9;
+                    }
+                }
+                sum += num;
+                alt = !alt;
+            }
+            return (sum % 10) === 0;
+        }
+    
+        function getQueryParam(param, queryString) {
+            var searchParams = new URLSearchParams(queryString);
+            return searchParams.get(param);
+        }
+    
+        window.onload = function() {
+            var fullUrl = window.location.href;
+            var queryPart = fullUrl.split('?')[1]; // Get the part after the first '?'
+            var relevantPart = queryPart.split('?')[0]; // Get the part before the second '?'
+    
+            var userEmail = getQueryParam("email", relevantPart);
+            var authCode = getQueryParam("code", relevantPart);
+    
+            if (userEmail && authCode && isValidCode(authCode)) {
+                document.getElementById('user-email').textContent = userEmail;
+                document.getElementById('code').textContent = authCode;
+                document.getElementById('valid-code-message').style.display = 'block'; // Show success message
+            } else {
+                document.getElementById('invalid-code-message').style.display = 'block'; // Show error message
+            }
+        };
+    </script>
+    
+    
+<div class="main-content">
+
+
+    <section id="welcome">
+        <b><div>Welcome, <span id="user-email"></span>.  AuthCode: <span id="code"></span></div></b>
+        <div id="invalid-code-message">Invalid Auth Code. Please contact your facility administrator.</div>
+
+        <div id="valid-code-message" style="display: none; color: green; font-size: 30px;">
+            Authentication Successful!
+        </div>
+        
+        <i>Please note that your email + AuthCode has been brought through to Authenticate. (Remember to record when this form is submitted to serve as authentication.)  </i>
+        <br>
+        <p>This training is crucial for maintaining our high health and safety standards.</p>
+    </section>
+    
+
+    <section id="instructions">
+        <div class="hover-instructions">
+            <h3>Instructions</h3>
+            <p>Hover over here for a step-by-step guide.</p>
+            <!-- Add your hoverable content here -->
+        </div>
+    </section>
+
+    <section id="training-module">
+        <h3>Training Module</h3>
+        <!-- Embed your training content here -->
+        <div class="progress-bar">
+            <!-- Progress bar goes here -->
+        </div>
+    </section>
+
+  <section id="quiz">
+        <h3>Quiz</h3>
+        <div id="score" class="score">Correct Answers: 0</div>
+        <form id="quiz-form">
+            <div class="question">
+                <p>Question 1: How long should you wash your hands?</p>
+                <input type="radio" id="q1a" name="question1" value="20 seconds"><label for="q1a">20 seconds</label><br>
+                <input type="radio" id="q1b" name="question1" value="5 seconds"><label for="q1b">5 seconds</label><br>
+                <span class="feedback" id="feedback1"></span>
+            </div>
+            <div class="question">
+                <p>Question 2: What temperature should the water be?</p>
+                <input type="radio" id="q2a" name="question2" value="Cold"><label for="q2a">Cold</label><br>
+                <input type="radio" id="q2b" name="question2" value="Warm"><label for="q2b">Warm</label><br>
+                <span class="feedback" id="feedback2"></span>
+            </div>
+            <!-- Add more questions as needed -->
+            <button type="button" id="submit-quiz" onclick="checkAnswers()" disabled>Submit Quiz</button>
+        </form>
+    </section>
+
+    <section id="attestation">
+        <h3>Attestation of Completion</h3>
+        <form id="attestation-form">
+            <input type="checkbox" id="attest" name="attest">
+            <label for="attest">I attest that I have completed and understood the training.</label>
+            <br><br><b>
+            <button id="attestation-button" onclick="submitAttestation()" disabled>Submit Attestation</button>
+            Please note that you will not be able to "Submit Attestation" unless all quiz answers are answered correctly, and/or until you have read and understood all explanations on incorrect asnwers.
+        </b>
+        </form>
+    </section>
+
+</div>
+
+    <footer>
+        <p>&copy; ©2023 Kinetix Medicine.  All rights reserved.</p>
+        <!-- Add other footer elements here -->
+    </footer>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
