@@ -59,12 +59,8 @@ var correctAnswers = {
 };
 
 function checkAnswers() {
-  // Set the quiz submission flag to true
-  quizSubmitted = true;
-  document.getElementById('submit-quiz').disabled = true;
   var totalCorrect = 0;
   var totalQuestions = Object.keys(correctAnswers).length;
-  var allAcknowledged = true;
 
   for (var question in correctAnswers) {
       var selected = document.querySelector('input[name="' + question + '"]:checked');
@@ -75,20 +71,35 @@ function checkAnswers() {
           feedbackElement.className = "correct";
           totalCorrect++;
       } else {
-          allAcknowledged = false;
           feedbackElement.innerHTML = `Incorrect ❌. Correct answer: ${correctAnswers[question].answer}.
               Explanation: ${correctAnswers[question].explanation}
-              <br><input type="checkbox" id="acknowledge${question}" class="acknowledge-checkbox">
+              <br><input type="checkbox" id="acknowledge${question}" class="acknowledge-checkbox" onchange="checkIfAllAcknowledged()">
               <label for="acknowledge${question}">I have read and understand this</label>`;
           feedbackElement.className = "incorrect";
       }
   }
 
+
+
   document.getElementById('score').innerText = `Correct Answers: ${totalCorrect} / ${totalQuestions}`;
-  checkAttestationEligibility();
+
+
+
+  
+  var allAcknowledgementsChecked = true;
+  document.querySelectorAll('.incorrect').forEach(function(item) {
+    if (!item.querySelector('.acknowledge-checkbox:checked')) {
+      allAcknowledgementsChecked = false;
+    }
+  });
+
+  // Display the attestation section if all answers are correct or acknowledged
+  if (totalCorrect === totalQuestions || allAcknowledgementsChecked) {
+    document.getElementById('attestation').style.display = 'block';
+  }
+}
 
   // Disable the submit button after it has been clicked
-}
 
 function checkAttestationEligibility() {
   var totalQuestions = Object.keys(correctAnswers).length;
@@ -226,3 +237,22 @@ window.addEventListener('scroll', function() {
 /* A global flag to track the submission state: */
 
 var quizSubmitted = false;  // This flag will be true once the quiz is submitted
+
+
+function submitAttestation() {
+    // Hide all sections
+    var sections = document.querySelectorAll('section, .main-content');
+    sections.forEach(function(section) {
+        section.style.display = 'none';
+    });
+
+    // Show the thank you section
+    var thankYouSection = document.getElementById('thank-you-section');
+    thankYouSection.style.display = 'block';
+
+    // Populate user details in the thank you section
+    document.getElementById('display-name').textContent = 'Your User Name Here'; // Replace with actual user name
+    document.getElementById('display-email').textContent = document.getElementById('user-email').textContent;
+    document.getElementById('display-auth-code').textContent = document.getElementById('code').textContent;
+}
+

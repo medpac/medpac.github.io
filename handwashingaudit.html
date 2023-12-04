@@ -70,7 +70,6 @@
     
 <div class="main-content">
 
-
     <section id="welcome">
         <b><div>Welcome, <span id="user-email"></span>.  AuthCode: <span id="code"></span></div></b>
         <div id="invalid-code-message">Invalid Auth Code. Please contact your facility administrator.</div>
@@ -122,19 +121,30 @@
         </form>
     </section>
 
-    <section id="attestation">
+    <section id="attestation" style="display: none;">
         <h3>Attestation of Completion</h3>
         <form id="attestation-form">
             <input type="checkbox" id="attest" name="attest">
             <label for="attest">I attest that I have completed and understood the training.</label>
             <br><br><b>
-            <button id="attestation-button" onclick="submitAttestation()" disabled>Submit Attestation</button>
-            Please note that you will not be able to "Submit Attestation" unless all quiz answers are answered correctly, and/or until you have read and understood all explanations on incorrect asnwers.
+                <button id="attestation-button" onclick="submitAttestation()" disabled>Submit Attestation</button>
+                Please note that you will not be able to "Submit Attestation" unless all quiz answers are answered correctly, and/or until you have read and understood all explanations on incorrect asnwers.
         </b>
         </form>
     </section>
 
 </div>
+
+<!-- Hidden thank you section -->
+
+
+<div id="thank-you-section" style="display: none;">
+    <h2>Thank You for Participating!</h2>
+    <p>User Name: <span id="display-name"></span></p>
+    <p>Email: <span id="display-email"></span></p>
+    <p>Auth Code: <span id="display-auth-code"></span></p>
+</div>
+
 
     <footer>
         <p>&copy; ©2023 Kinetix Medicine.  All rights reserved.</p>
