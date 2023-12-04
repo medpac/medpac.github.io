@@ -51,6 +51,7 @@ window.addEventListener('scroll', function() {
 
 
 /* for Questionnaire */
+
 var correctAnswers = {
   "question1": { answer: "20 seconds", explanation: "Handwashing for at least 20 seconds is recommended." },
   "question2": { answer: "Warm", explanation: "Warm water is more effective for removing germs." }
@@ -82,6 +83,9 @@ function checkAnswers() {
 
   document.getElementById('score').innerText = `Correct Answers: ${totalCorrect} / ${totalQuestions}`;
   checkAttestationEligibility();
+
+  // Disable the submit button after it has been clicked
+  document.getElementById('submit-quiz').disabled = true;
 }
 
 function checkAttestationEligibility() {
@@ -101,3 +105,19 @@ document.getElementById('quiz-form').addEventListener('change', function() {
 document.getElementById('attest').addEventListener('change', function() {
   checkAttestationEligibility();
 });
+
+/* To include a function that checks if all questions have been answered and to disable the button after it's clicked */
+document.getElementById('quiz-form').addEventListener('change', checkIfAllAnswered);
+
+function checkIfAllAnswered() {
+  var allAnswered = true;
+  var questions = document.querySelectorAll('.question');
+
+  questions.forEach(function(question) {
+      if (!question.querySelector('input[type="radio"]:checked')) {
+          allAnswered = false;
+      }
+  });
+
+  document.getElementById('submit-quiz').disabled = !allAnswered;
+}
