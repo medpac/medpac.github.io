@@ -121,3 +121,23 @@ function checkIfAllAnswered() {
 
   document.getElementById('submit-quiz').disabled = !allAnswered;
 }
+
+
+/* JavaScript parsing logic to handle this quirk.  Check if the last character of the URL is an =, and if so, remove it before parsing. */
+window.onload = function() {
+  var fullUrl = window.location.href;
+
+  // Check if URL ends with '=' and remove it
+  if (fullUrl.endsWith('=')) {
+      fullUrl = fullUrl.substring(0, fullUrl.length - 1);
+  }
+
+  var queryPart = fullUrl.split('?')[1];
+  var relevantPart = queryPart.split('?')[0];
+
+  var userEmail = getQueryParam("email", relevantPart);
+  var authCode = getQueryParam("code", relevantPart);
+
+  
+};
+
