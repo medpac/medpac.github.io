@@ -21,6 +21,25 @@
     </header>
 
     <script>
+
+        /* extract the 'code' parameter from the url */
+        
+        window.onload = function() {
+            // Create a URLSearchParams object from the current URL
+            var urlParams = new URLSearchParams(window.location.search);
+
+            // Get the value of the 'code' parameter
+            var code = urlParams.get('code');
+
+            // Use the 'code' value as needed
+            console.log(code); // For debugging, to see the code in the browser's console
+
+            // You can now use 'code' in your HTML or for further processing
+            // For example, display it in an element with id 'displayCode'
+            document.getElementById('displayCode').textContent = code;
+        };
+
+
         function isValidCode(code) {
             // Simple Luhn Algorithm Check
             var sum = 0;
@@ -56,7 +75,13 @@
                 document.getElementById('invalid-code-message').style.display = 'block';
             }
         }
+
+
+
     </script>
+
+<p>Code: <span id="displayCode"></span></p>
+
 
     <section id="welcome">
         <b><div>Welcome, <span id="user-email"></span>.  AuthCode: <span id="code"></span></div></b>
