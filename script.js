@@ -59,6 +59,9 @@ var correctAnswers = {
 };
 
 function checkAnswers() {
+  // Set the quiz submission flag to true
+  quizSubmitted = true;
+  document.getElementById('submit-quiz').disabled = true;
   var totalCorrect = 0;
   var totalQuestions = Object.keys(correctAnswers).length;
   var allAcknowledged = true;
@@ -85,12 +88,12 @@ function checkAnswers() {
   checkAttestationEligibility();
 
   // Disable the submit button after it has been clicked
-  document.getElementById('submit-quiz').disabled = true;
 }
 
 function checkAttestationEligibility() {
   var totalQuestions = Object.keys(correctAnswers).length;
   var totalCorrect = document.querySelectorAll('.correct').length;
+  var allAcknowledgementsChecked = true;
   var allAcknowledged = document.querySelectorAll('.acknowledge-checkbox:not(:checked)').length === 0;
   var attestationChecked = document.getElementById('attest').checked;
 
@@ -119,7 +122,18 @@ function checkIfAllAnswered() {
       }
   });
 
-  document.getElementById('submit-quiz').disabled = !allAnswered;
+  // Only enable the submit button if the quiz has not been submitted
+  if (!quizSubmitted) {
+    document.getElementById('submit-quiz').disabled = !allAnswered;
+  }
+}  
+
+// disable all radio buttons in the quiz after submission to prevent changing answers:
+function disableQuizOptions() {
+  var radios = document.querySelectorAll('#quiz-form input[type="radio"]');
+  radios.forEach(function(radio) {
+    radio.disabled = true;
+  });
 }
 
 
@@ -209,3 +223,6 @@ window.addEventListener('scroll', function() {
   // ... existing logic for header opacity on scroll
 });
 
+/* A global flag to track the submission state: */
+
+var quizSubmitted = false;  // This flag will be true once the quiz is submitted
