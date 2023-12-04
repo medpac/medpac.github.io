@@ -13,8 +13,25 @@
         <p>Welcome to our interactive handwashing training module.</p>
     </header>
 
+    <script>
+        function getQueryParam(param) {
+            var searchParams = new URLSearchParams(window.location.search);
+            return searchParams.get(param);
+        }
+
+        window.onload = function() {
+            var userEmail = getQueryParam("email");
+            if (userEmail) {
+                document.getElementById('user-email').textContent = userEmail;
+                // Additional logic to record the click can be added here
+            }
+        }
+    </script>
+
+
+
     <section id="welcome">
-        <h2>Welcome [User’s Name]</h2>
+        <div>Welcome, <span id="user-email"></span></div>
         <p>This training is crucial for maintaining our high health and safety standards.</p>
     </section>
 
