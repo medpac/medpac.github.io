@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handwashing Audit Compliance Training</title>
     <!-- Add your CSS file link here -->
+    <style>
+        #invalid-code-message {
+            color: red;
+            font-size: 30px;
+            display: none; /* Initially hidden */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,30 +21,50 @@
     </header>
 
     <script>
+        function isValidCode(code) {
+            // Simple Luhn Algorithm Check
+            var sum = 0;
+            var alt = false;
+            for (var i = code.length - 1; i >= 0; i--) {
+                var num = parseInt(code.charAt(i), 10);
+                if (alt) {
+                    num *= 2;
+                    if (num > 9) {
+                        num -= 9;
+                    }
+                }
+                sum += num;
+                alt = !alt;
+            }
+            return (sum % 10) === 0;
+        }
+
         function getQueryParam(param) {
             var searchParams = new URLSearchParams(window.location.search);
             return searchParams.get(param);
         }
-    
+
         window.onload = function() {
             var userEmail = getQueryParam("email");
             var authCode = getQueryParam("code");
-    
-            if (userEmail && authCode) {
+
+            if (userEmail && authCode && isValidCode(authCode)) {
                 document.getElementById('user-email').textContent = userEmail;
-                // Additional logic to verify the authCode and record the click can be added here
+                document.getElementById('code').textContent = authCode;
+            } else {
+                document.getElementById('invalid-code-message').style.display = 'block';
             }
         }
     </script>
-    
-
 
     <section id="welcome">
         <b><div>Welcome, <span id="user-email"></span>.  AuthCode: <span id="code"></span></div></b>
+        <div id="invalid-code-message">Invalid Auth Code. Please contact your facility administrator.</div>
         <i>Please note that your email + AuthCode has been brought through to Authenticate. (Remember to record when this form is submitted, serve as authentication.)  </i>
         <br>
         <p>This training is crucial for maintaining our high health and safety standards.</p>
     </section>
+    
 
     <section id="instructions">
         <div class="hover-instructions">
