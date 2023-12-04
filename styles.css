@@ -668,7 +668,7 @@ footer {
 /* for Questionnaire */
 body {
   font-family: Arial, sans-serif;
-  padding-top: 100px; /* Adjust this value based on the actual height of your header */
+  padding-top: 10rem; /* Adjust this value based on the actual height of your header */
 }
 
 header, section {
