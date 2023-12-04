@@ -20,66 +20,50 @@
         <p>Welcome to our interactive handwashing training module.</p>
     </header>
 
+
     <script>
-
-        /* extract the 'code' parameter from the url */
-        
-        window.onload = function() {
-            // Create a URLSearchParams object from the current URL
-            var urlParams = new URLSearchParams(window.location.search);
-
-            // Get the value of the 'code' parameter
-            var code = urlParams.get('code');
-
-            // Use the 'code' value as needed
-            console.log(code); // For debugging, to see the code in the browser's console
-
-            // You can now use 'code' in your HTML or for further processing
-            // For example, display it in an element with id 'displayCode'
-            document.getElementById('displayCode').textContent = code;
-        };
-
-
         function isValidCode(code) {
-            // Simple Luhn Algorithm Check
-            var sum = 0;
-            var alt = false;
-            for (var i = code.length - 1; i >= 0; i--) {
-                var num = parseInt(code.charAt(i), 10);
-                if (alt) {
-                    num *= 2;
-                    if (num > 9) {
-                        num -= 9;
-                    }
+        // Simple Luhn Algorithm Check
+        var sum = 0;
+        var alt = false;
+        for (var i = code.length - 1; i >= 0; i--) {
+            var num = parseInt(code.charAt(i), 10);
+            if (alt) {
+                num *= 2;
+                if (num > 9) {
+                    num -= 9;
                 }
-                sum += num;
-                alt = !alt;
             }
-            return (sum % 10) === 0;
+            sum += num;
+            alt = !alt;
         }
-
-        function getQueryParam(param) {
-            var searchParams = new URLSearchParams(window.location.search);
-            return searchParams.get(param);
-        }
-
-        window.onload = function() {
-        var userEmail = getQueryParam("email");
-        var authCode = getQueryParam("code");
-
-        if (userEmail && authCode && isValidCode(authCode)) {
-            document.getElementById('user-email').textContent = userEmail;
-            document.getElementById('code').textContent = authCode;
-            document.getElementById('valid-code-message').style.display = 'block'; // Show success message
-        } else {
-            document.getElementById('invalid-code-message').style.display = 'block'; // Show error message
-        }
+        return (sum % 10) === 0;
     }
-
-
-
-
+    
+    function getQueryParam(param, queryString) {
+        var searchParams = new URLSearchParams(queryString);
+        return searchParams.get(param);
+    }
+    
+        window.onload = function() {
+            var fullUrl = window.location.href;
+            var queryPart = fullUrl.split('?')[1]; // Get the part after the first '?'
+            var relevantPart = queryPart.split('?')[0]; // Get the part before the second '?'
+            var userEmail = getQueryParam("email");
+            var authCode = getQueryParam("code");
+    
+            if (userEmail && authCode && isValidCode(authCode)) {
+                document.getElementById('user-email').textContent = userEmail;
+                document.getElementById('code').textContent = authCode;
+                document.getElementById('valid-code-message').style.display = 'block'; // Show success message
+            } else {
+                document.getElementById('invalid-code-message').style.display = 'block'; // Show error message
+            }
+        };
     </script>
+    
+
+
 
 <p>Code: <span id="displayCode"></span></p>
 
