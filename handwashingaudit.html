@@ -18,20 +18,24 @@
             var searchParams = new URLSearchParams(window.location.search);
             return searchParams.get(param);
         }
-
+    
         window.onload = function() {
             var userEmail = getQueryParam("email");
-            if (userEmail) {
+            var authCode = getQueryParam("code");
+    
+            if (userEmail && authCode) {
                 document.getElementById('user-email').textContent = userEmail;
-                // Additional logic to record the click can be added here
+                // Additional logic to verify the authCode and record the click can be added here
             }
         }
     </script>
-
+    
 
 
     <section id="welcome">
-        <div>Welcome, <span id="user-email"></span></div>
+        <b><div>Welcome, <span id="user-email"></span>.  AuthCode: <span id="code"></span></div></b>
+        <i>Please note that your email + AuthCode has been brought through to Authenticate. (Remember to record when this form is submitted, serve as authentication.)  </i>
+        <br>
         <p>This training is crucial for maintaining our high health and safety standards.</p>
     </section>
 
