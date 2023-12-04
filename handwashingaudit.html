@@ -15,6 +15,30 @@
         button {
             background-color: var(--secondary-color); /* Vibrant button color */
         }
+
+        header {
+        padding: 20px; /* Add padding to the header */
+        text-align: center; /* Center-align header content */
+    }
+
+    /* Media query for smaller screens (e.g., mobile devices) */
+    @media screen and (max-width: 768px) {
+        header {
+            padding: 10px; /* Reduce padding for smaller screens */
+        }
+    }
+
+    body {
+        padding-top: 10rem; /* Add padding to the top of the body */
+    }
+
+    /* Media query for smaller screens (e.g., mobile devices) */
+    @media screen and (max-width: 768px) {
+        body {
+            padding-top: 12rem; /* Reduce padding for smaller screens */
+        }
+    }
+    
     </style>
 </head>
 <body>
@@ -137,11 +161,12 @@
 
         .option input[type="radio"] {
             appearance: none; /* Remove default radio button style */
-            width: 20px; /* Set a fixed width for the square radio button */
-            height: 20px; /* Set a fixed height for the square radio button */
-            border: 2px solid #0079FF; /* Add a border to the radio button */
+            width: 25px; /* Set a fixed width for the square radio button */
+            height: 25px; /* Set a fixed height for the square radio button */
+            border: 2.5px solid #0079FF; /* Add a border to the radio button */
             border-radius: 5px; /* Add rounded corners to the radio button */
             margin-right: 10px; /* Add margin between radio button and label */
+            margin-top: 2px;
             cursor: pointer; /* Change cursor to pointer on hover */
         }
 
@@ -159,7 +184,7 @@
         }
     </style>
          <div class="quiz-container">
-            <h3>Quiz</h3>
+            <h2>Quiz</h2><br>
             <div id="score" class="score">Correct Answers: 0</div>
             <form id="quiz-form">
                 <div class="question">
@@ -172,6 +197,10 @@
                         <input type="radio" name="question1" value="5 seconds">
                         5 seconds
                     </label>
+                    <label class="option">
+                        <input type="radio" name="question1" value="45 seconds">
+                        45 seconds
+                    </label>
                     <span class="feedback" id="feedback1"></span>
                 </div>
                 <div class="question">
@@ -183,6 +212,10 @@
                     <label class="option">
                         <input type="radio" name="question2" value="Warm">
                         Warm
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="question2" value="98˚C">
+                        98˚C
                     </label>
                 </div>
                 <span class="feedback" id="feedback2"></span>
@@ -204,7 +237,6 @@
         </b>
         </form>
     </section>
-
 </div>
 
 <!-- Hidden thank you section -->

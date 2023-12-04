@@ -664,7 +664,6 @@ footer {
 }
 
 
-
 /* for Questionnaire */
 body {
   font-family: Arial, sans-serif;
@@ -735,96 +734,3 @@ button:disabled {
 
 
 
-
-<section id="quiz">
-    <style>
-        .quiz-container {
-            background: #f6f6f6; /* Set a background color for the entire quiz section */
-            padding: 20px; /* Add some padding to the quiz container */
-        }
-
-        .question-container {
-            border: 1px solid #ccc; /* Add a border to each question container */
-            padding: 15px; /* Add padding to create spacing */
-            margin-bottom: 15px; /* Add margin between questions */
-            background-color: #fff; /* Add a white background color to the question container */
-            border-radius: 10px; /* Add rounded corners to the question container */
-        }
-
-        .question-container:nth-child(odd) {
-            background-color: #f0f0f0; /* Slightly alternate background color for odd questions */
-        }
-
-        .question {
-            font-weight: bold; /* Make the question text bold */
-        }
-
-        .options {
-            display: flex;
-            align-items: center; /* Align options vertically in the center */
-        }
-
-        .option {
-            display: flex;
-            align-items: center; /* Align radio button and label vertically in the center */
-            margin-right: 20px; /* Add margin between options */
-        }
-
-        .option input[type="radio"] {
-            appearance: none; /* Remove default radio button style */
-            width: 20px; /* Set a fixed width for the square radio button */
-            height: 20px; /* Set a fixed height for the square radio button */
-            border: 2px solid #0079FF; /* Add a border to the radio button */
-            border-radius: 5px; /* Add rounded corners to the radio button */
-            margin-right: 10px; /* Add margin between radio button and label */
-            cursor: pointer; /* Change cursor to pointer on hover */
-        }
-
-        .option input[type="radio"]:checked {
-            background-color: #0079FF; /* Change background color when checked */
-        }
-
-        .option label {
-            cursor: pointer; /* Change cursor to pointer on hover */
-        }
-
-        .feedback {
-            font-style: italic; /* Make the feedback text italic */
-            color: #888; /* Change the color of the feedback text */
-        }
-    </style>
-    <div class="quiz-container">
-        <h3>Quiz</h3>
-        <div id="score" class="score">Correct Answers: 0</div>
-        <div class="question-container">
-            <p class="question">Question 1: How long should you wash your hands?</p>
-            <div class="options">
-                <label class="option">
-                    <input type="radio" name="question1" value="20 seconds">
-                    20 seconds
-                </label>
-                <label class="option">
-                    <input type="radio" name="question1" value="5 seconds">
-                    5 seconds
-                </label>
-            </div>
-            <span class="feedback" id="feedback1"></span>
-        </div>
-        <div class="question-container">
-            <p class="question">Question 2: What temperature should the water be?</p>
-            <div class="options">
-                <label class="option">
-                    <input type="radio" name="question2" value="Cold">
-                    Cold
-                </label>
-                <label class="option">
-                    <input type="radio" name="question2" value="Warm">
-                    Warm
-                </label>
-            </div>
-            <span class="feedback" id="feedback2"></span>
-        </div>
-        <!-- Add more questions as needed -->
-        <button type="button" id="submit-quiz" onclick="checkAnswers()" disabled>Submit Quiz</button>
-    </div>
-</section>
