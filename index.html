@@ -1,347 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sample AI Services Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>CodePen - Web Launch Checklist</title>
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Rubik:300,400,500">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      padding-top: 7.5rem; /* Buffer to push content down */
-      padding-bottom: 4rem; /* Space at the bottom equal to the height of the opacity bar */
-    }
-  
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', serif;
-  }
-
-  .nav-links a {
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  .feature {
-    padding: 15px; /* Add padding for text */
-  }
-
-  .feature-image {
-    max-width: calc(100% + 30px); /* Counteract padding with additional width */
-    height: auto;
-    display: block;
-    border-radius: 8px 8px 0 0;
-    margin-left: 0px;  /* Negative margin to counteract padding */
-    margin-right: 0px; /* Negative margin to counteract padding */
-  }
-  
-
-</style>
 </head>
-
-
 <body>
-  
-  <header>
+<!-- partial:index.partial.html -->
+<header>
+ <h1 class="title"><a href="https://www.clinicchecklist.com">Surgical Safety Checklist</a></h1>
+ <div class="progress">
+  <span class="progress__count">0/X</span>
+  <input class="progress__reset" type="reset" value="Reset" title="Reset Checkboxes" tabindex="0">
+  <span class="progress__border"></span>
+  <span class="progress__bar"></span>
+ </div>
 
-    <div class="logo">
-      <img src="images/CHEK_Transparent_Light.png" alt="Light Logo" class="header-logo light-logo">
-      <img src="images/CHEK_Transparent_Dark.png" alt="Dark Logo" class="header-logo dark-logo">
-    </div>
-
-    <nav>
-      <div class="logo"></div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="Why">Why We Exist</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    
-      <!-- CTA Buttons -->
-    <div class="cta-buttons">
-      <button class="cta-button no-wrap">Start Free Trial</button>
-      <button class="cta-button demo no-wrap">View Demo</button>
-    </div>
-        
-      <!-- Hamburger Menu -->
-      <div class="hamburger-menu" id="hamburger-menu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    
-    </div>    
-    </nav>
 </header>
+<div class="container">
+ <section class="checklist">
+  <h2 class="checklist__title">Before induction of anaesthesia</h2>
+  <span class="checklist__title-border"></span>
+  <span class="checklist__percentage-border"></span>
+  <ul class="checklist-container">
 
-<!-- Hero Section with Interactive Elements -->
-<section class="hero">
-  <h1 class="animate-title">Empower Your Clinic with Checklist Butler</h1>
-  <p>Transforming medical clinic operations with <>smart checklist management.</b></p>
-  <button class="cta-button animate-button">Explore Features</button>
-  <button class="cta-button animate-button">Request Demo</button>
-</section>
-
-
-<h2>SECTION TWO FEATURES</h2>
-<p>Feature ards with the screenshots in them.  This should be introducing the most impressive features</p> 
-<section class="features">
-  <div class="feature">
-    <h2>Maximize Productivity</h2>
-    <p>Our shared inb1ox is AI-enhanced and designed for speed and efficiency—so your team can work smarter and collaborate faster.</p>
-    <img src="images/feature_card1.png" class="feature-image">
-  </div>
-  <div class="feature">
-    <h2>Better Tickets</h2>
-    <p>Resolve complex issues quickly with tickets optimized for team collaboration and real-time customer updates.</p>
-    <img src="images/feature_card2.png" class="feature-image">
-  </div>
-  <div class="feature">
-    <h2>Help Your Customers</h2>
-    <p>Connect your help center across the entire platform—so your customers can find the most accurate answers when and where they need them.</p>
-    <img src="images/feature_card3.png" class="feature-image">
-
-  </div>
-</section>
-
-<section class="feature-section">
-  <h2>SECTION 3</h2>
-  <p>It's your messenger—so have it match your brand with infinite design options.</p>
-  <div class="feature-cards">
-    <div class="feature-card">
-      <img src="path-to-your-image.png" alt="Mobile">
-      <h3>Mobile</h3>
-      <p>Bring the messenger to your mobile app with powerful iOS and Android SDKs.</p>
+   <li class="checklist-item">
+    <input id="" type="checkbox" /><label for="" class="checkbox"></label><span class="checklist-item__title">Images Optimized</span>
+    <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+                    <span class="line"></span>
+                </button>
+    <div class="info-container">
+     <div class="info">
+      <ul>
+       <li>Compress all your images using either web processors such as <a href="http://optimizilla.com/" target="_blank" rel="noopener">Optimizilla.com</a> and <a href="https://compressor.io/compress" target="_blank" rel="noopener">Compressor.io</a>, or
+        desktop apps such as <a target="_blank" rel="noopener" href="http://nikkhokkho.sourceforge.net/static.php?page=FileOptimizer">FileOptimizer</a> and <a target="_blank" rel="noopener" href="https://imageoptim.com/mac">ImageOptim</a>.
+       </li>
+       <li>Generate the exact image size for each element instead of resizing it with CSS/HTML as this can be a heavy process for the browser to perform.
+       </li>
+       <li>Utilize <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS">Image
+                                Sprites</a> to save on HTTP requests and bandwidth.
+       </li>
+      </ul>
+     </div>
     </div>
-    <div class="feature-card">
-      <img src="path-to-your-image.png" alt="Omnichannel messaging">
-      <h3>Omnichannel messaging</h3>
-      <p>Support customers using their preferred channel—whether that’s email, SMS, social, or more.</p>
+   </li>
+   <li class="checklist-item">
+    <input id="" type="checkbox" /><label for="" class="checkbox"></label><span class="checklist-item__title">Reduced Page Weight &amp; Requests</span>
+    <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+                    <span class="line"></span>
+                </button>
+
+    <div class="info-container">
+     <div class="info">Here are some tips to keep your page weight under 2MB and 50 requests:
+      <ul>
+       <li>Limit 3rd party libraries &amp; scripts</li>
+       <li>Load resources &amp; requests asynchronously</li>
+       <li>Consider a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN</a> for static assets &amp; pages
+       </li>
+      </ul>
+     </div>
     </div>
-    <div class="feature-card">
-      <img src="path-to-your-image.png" alt="Omnichannel messaging">
-      <h3>Omnichannel messaging</h3>
-      <p>Support customers using their preferred channel—whether that’s email, SMS, social, or more.</p>
-    </div>
-    <!-- Repeat for the other cards -->
-  </div>
-</section>
+   </li>
+     <!-- Before induction of anaesthesia -->
+     <li class="checklist-item">
+        <input id="question1" type="checkbox" /><label for="question1" class="checkbox"></label><span class="checklist-item__title">1. Has the patient confirmed his/her identity, site, procedure, and consent?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Ensuring patient identity and informed consent are fundamental to patient safety and surgical accuracy.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question2" type="checkbox" /><label for="question2" class="checkbox"></label><span class="checklist-item__title">2. Is the site marked?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Marking the site of surgery helps prevent wrong-site surgeries, a critical aspect of patient care.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question3" type="checkbox" /><label for="question3" class="checkbox"></label><span class="checklist-item__title">3. Is the anaesthesia machine and medication check complete?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Checking anesthesia equipment and medications reduces the risk of equipment failure and drug-related complications.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question4" type="checkbox" /><label for="question4" class="checkbox"></label><span class="checklist-item__title">4. Is the pulse oximeter on the patient and functioning?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          The pulse oximeter monitors oxygen saturation, a vital sign during anesthesia and surgery.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question5" type="checkbox" /><label for="question5" class="checkbox"></label><span class="checklist-item__title">5. Does the patient have a known allergy?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Identifying allergies prevents adverse reactions to medications or materials used during surgery.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question6" type="checkbox" /><label for="question6" class="checkbox"></label><span class="checklist-item__title">6. Does the patient have a difficult airway or aspiration risk?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Awareness of airway and aspiration risks guides anesthesia strategies to ensure patient safety.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question7" type="checkbox" /><label for="question7" class="checkbox"></label><span class="checklist-item__title">7. Is there a risk of >500ml blood loss (7ml/kg in children)?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Anticipating significant blood loss allows the team to prepare for potential transfusions and manage patient hemodynamics effectively.
+         </div>
+        </div>
+       </li>
+       
+
+ </section>
+ <section class="checklist">
+  <h2 class="checklist__title">Before skin incision</h2>
+  <span class="checklist__title-border"></span>
+  <span class="checklist__percentage-border"></span>
+  <ul class="checklist-container">
+    <!-- Before skin incision -->
+    <li class="checklist-item">
+        <input id="question8" type="checkbox" /><label for="question8" class="checkbox"></label><span class="checklist-item__title">8. Confirm all team members have introduced themselves by name and role.</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Introductions enhance team communication and collaboration, which are crucial for surgical safety.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question9" type="checkbox" /><label for="question9" class="checkbox"></label><span class="checklist-item__title">9. Confirm the patient’s name, procedure, and where the incision will be made.</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Reconfirming these details helps prevent errors and ensures the right patient is undergoing the correct procedure.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question10" type="checkbox" /><label for="question10" class="checkbox"></label><span class="checklist-item__title">10. Has antibiotic prophylaxis been given within the last 60 minutes?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Timely antibiotic administration is key to preventing surgical site infections.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question11" type="checkbox" /><label for="question11" class="checkbox"></label><span class="checklist-item__title">11. To Surgeon: What are the critical or non-routine steps?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Discussing critical steps prepares the team for complex or unusual aspects of the surgery.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question12" type="checkbox" /><label for="question12" class="checkbox"></label><span class="checklist-item__title">12. To Surgeon: How long will the case take?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Estimating the duration helps in planning and resource allocation for the surgery.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question13" type="checkbox" /><label for="question13" class="checkbox"></label><span class="checklist-item__title">13. To Surgeon: What is the anticipated blood loss?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Anticipating blood loss allows for better preparation, including arranging for blood transfusions if necessary.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question14" type="checkbox" /><label for="question14" class="checkbox"></label><span class="checklist-item__title">14. To Anaesthetist: Are there any patient-specific concerns?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Identifying patient-specific concerns allows the anaesthetist to adjust the anesthesia plan accordingly.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question15" type="checkbox" /><label for="question15" class="checkbox"></label><span class="checklist-item__title">15. To Nursing Team: Has sterility (including indicator results) been confirmed?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Confirming sterility is essential to prevent infections and maintain a safe surgical environment.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question16" type="checkbox" /><label for="question16" class="checkbox"></label><span class="checklist-item__title">16. To Nursing Team: Are there equipment issues or any concerns?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Addressing equipment issues before the procedure begins is crucial to avoid disruptions and maintain safety.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question17" type="checkbox" /><label for="question17" class="checkbox"></label><span class="checklist-item__title">17. Is essential imaging displayed?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Displaying essential imaging ensures that the surgical team has all necessary information readily available during the procedure.
+         </div>
+        </div>
+       </li>
+           
+  </ul>
+ </section>
 
 
-<h2>Key Features</h2>
-<section class="keyfeatures">
-    
-    <div class="keyfeature">
-        <img src="images/feature1.png" alt="Customizable Checklists">
-        <h3>Customizable Checklists</h3>
-        <p>Create and tailor checklists to fit your clinical workflow.</p>
-    </div>
-    <div class="keyfeature">
-        <img src="images/feature2.png" alt="Automated Processes">
-        <h3>Automated Processes</h3>
-        <p>Streamline repetitive tasks and notifications for efficiency.</p>
-    </div>
-    <div class="keyfeature">
-        <img src="images/feature3.png" alt="Data Security">
-        <h3>Data Security</h3>
-        <p>Strict compliance with healthcare regulations for data security.</p>
-    </div>
-</section>
-
-
-
-<section class="feature-section">
-  <h2>Customizable messenger</h2>
-  <p>It's your messenger—so have it match your brand with infinite design options.</p>
-    <div class="feature-cards-container">
-      <div class="feature-card">
-        this one should have dots
-      </div>
-      <div class="feature-card">
-        fdasfasdf
-      </div>
-      <div class="feature-card">
-        jklhl
-      </div>
-      <!-- Repeat for other cards -->
-    </div>
-    </div>
-  </div>
-</section>
-
-
-
-<div class="ticker">
-  <div class="ticker-item">
-      <img src="images/logos/1.png" alt="Image 1">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/2.png" alt="Image 2">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/3.png" alt="Image 3">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/4.png" alt="Image 4">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/5.png" alt="Image 5">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/6.svg" alt="Image 6">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/7.png" alt="Image 7">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/8.png" alt="Image 8">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/9.png" alt="Image 9">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/10.png" alt="Image 10">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/11.png" alt="Image 11">
-  </div>
-  <div class="ticker-item">
-      <img src="images/logos/12.webp" alt="Image 12">
-  </div>
+ <section class="checklist">
+  <h2 class="checklist__title">Before patient leaves operating room</h2>
+  <span class="checklist__title-border"></span>
+  <span class="checklist__percentage-border"></span>
+  <ul class="checklist-container">
+    <!-- Before patient leaves operating room -->
+    <li class="checklist-item">
+        <input id="question18" type="checkbox" /><label for="question18" class="checkbox"></label><span class="checklist-item__title">18. Nurse Verbally Confirms: The name of the procedure.</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          This verbal confirmation helps ensure the accuracy and completeness of the surgical procedure.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question19" type="checkbox" /><label for="question19" class="checkbox"></label><span class="checklist-item__title">19. Nurse Verbally Confirms: Completion of instrument, sponge, and needle counts.</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Accurate counts prevent the retention of surgical items in the patient, a critical safety measure.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question20" type="checkbox" /><label for="question20" class="checkbox"></label><span class="checklist-item__title">20. Nurse Verbally Confirms: Specimen labelling (read specimen labels aloud including patient name).</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Correct specimen labeling ensures accurate identification and diagnosis post-surgery.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question21" type="checkbox" /><label for="question21" class="checkbox"></label><span class="checklist-item__title">21. Nurse Verbally Confirms: Whether there are any equipment problems to be addressed.</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Identifying and addressing equipment issues before leaving the operating room is essential for patient safety and future surgical procedures.
+         </div>
+        </div>
+       </li>
+       <li class="checklist-item">
+        <input id="question22" type="checkbox" /><label for="question22" class="checkbox"></label><span class="checklist-item__title">22. To Surgeon, Anaesthetist, and Nurse: What are the key concerns for recovery and management of this patient?</span>
+        <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
+         <span class="line"></span>
+        </button>
+        <div class="info-container">
+         <div class="info">
+          Discussing key concerns for recovery and patient management post-surgery ensures continuity of care and prepares the team for potential complications.
+         </div>
+        </div>
+       </li>
+  </ul>
+ </section>
+ 
 </div>
-
-
-
-
-<section class="pricing">
-    <h2>Pricing Tiers</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Feature</th>
-                <th>Basic Plan</th>
-                <th>Professional Plan</th>
-                <th>Premium Plan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Customizable Checklists</td>
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Automated Reminders</td>
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Data Security & Compliance</td>
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Advanced Analytics</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Mobile App Access</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>24/7 Customer Support</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>API Integrations</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Real-time Collaboration Tools</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Unlimited Checklists</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Custom Form Builder</td>
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Priority Support</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Dedicated Account Manager</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Onboarding & Training Sessions</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Custom Integration Development</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-            <tr>
-                <td>Enhanced Security Features</td>
-                <td><i class="fa fa-times cross-mark"></i></td> 
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-                <td><i class="fa fa-check check-mark"></i></td>  <!-- For Check Mark -->
-            </tr>
-        </tbody>
-    </table>
-</section>
-
-
-<section class="testimonials">
-  <div class="testimonial">
-    <p>"Within six days, our AI has been successfully resolving 42% of conversations. It's truly surpassed my expectations."</p>
-    <p>- Jane Doe, Customer Support Director</p>
-  </div>
-  <!-- Add more testimonials here -->
-</section>
-
-
-<footer>
-  <p>&copy; 2023 AI Company. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-
-<div class="bottom-logo-container">
-  <img src="images/Org_Transparent_Logo.png" alt="Second Logo" class="bottom-logo">
-</div>
-<div class="opacity-bar">
-
-</div>
-
+<!-- partial -->
+  <script  src="./script.js"></script>
 
 </body>
 </html>
