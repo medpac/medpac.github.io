@@ -467,4 +467,22 @@ footer span {
     page-break-after: avoid;
   }
   
+  @media screen and (max-width: 768px) { /* Adjust this value based on your needs */
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .container .checklist {
+      min-width: 100%; /* Make checklist items full width */
+      max-width: 100%;
+      margin: 15px 0; /* Adjust margin as needed */
+    }
+  
+    .checklist__title-border,
+    .checklist__percentage-border {
+      width: 100%; /* Full width for title and percentage borders */
+    }
+  }
+
 }
