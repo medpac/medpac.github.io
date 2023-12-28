@@ -166,15 +166,15 @@ a:hover {
   display: flex;
   font-size: 1.2em;
   max-width: 1550px;
-  min-width:650
+  min-width: 500px
   margin: 0 auto;
   flex: 1;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .container .checklist {
-  min-width: 650px;
-  max-width: 750px;
+  min-width: 500px;
+  max-width: 550px;
   margin: 15px 15px 0;
 }
 .container .checklist .checklist-container {
