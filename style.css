@@ -76,13 +76,8 @@ body {
   min-height: 100vh;
   margin: 0;
   letter-spacing: 0.02em;
-<<<<<<< HEAD
   color: #000000;
   background: #f1f1f1;
-=======
-  color: #f5f5f5;
-  background: #585afa;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -90,24 +85,15 @@ body {
 a {
   transition: all 0.2s ease;
   text-decoration: none;
-<<<<<<< HEAD
   color: #2727c2;
   border-bottom: 1px solid #2727c2;
-=======
-  color: #57eaa6;
-  border-bottom: 1px solid #57eaa6;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   text-shadow: 0 1px 0 #585afa;
 }
 a:hover {
   border-bottom: 2px solid #bf6bfe;
 }
 ::-moz-selection {
-<<<<<<< HEAD
   background: rgba(129, 113, 209, 0.75);
-=======
-  background: rgba(33, 16, 118, 0.75);
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   text-shadow: none;
 }
 ::selection {
@@ -121,11 +107,7 @@ a:hover {
   text-align: center;
 }
 .title a {
-<<<<<<< HEAD
   color: #000000;
-=======
-  color: #e6e6e6;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   border: 0;
 }
 .progress {
@@ -148,26 +130,15 @@ a:hover {
   transition: all 0.3s ease;
   letter-spacing: 0.025em;
   color: inherit;
-<<<<<<< HEAD
   border: 1px solid #5332f8;
   border-radius: 3px;
   outline: 0;
   background: rgba(233, 233, 233, 0.75);
-=======
-  border: 1px solid #211076;
-  border-radius: 3px;
-  outline: 0;
-  background: rgba(33, 16, 118, 0.75);
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
 }
 .progress__reset:focus,
 .progress__reset:hover {
-<<<<<<< HEAD
   background: rgba(150, 162, 255, 0.8);
-=======
-  background: rgba(189, 106, 255, 0.8);
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   box-shadow: 0 7px 14px rgba(33, 16, 118, 0.16), 0 3px 6px rgba(33, 16, 118, 0.2);
 }
 .progress__reset:active {
@@ -180,11 +151,7 @@ a:hover {
 .progress__border {
   display: block;
   margin-top: 12px;
-<<<<<<< HEAD
   border-bottom: 3px solid #827cc5;
-=======
-  border-bottom: 3px solid #57d490;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   box-shadow: 0 20px 20px -20px rgba(33, 16, 118, 0.65);
 }
 .progress__bar {
@@ -193,23 +160,20 @@ a:hover {
   transition: transform 0.5s ease;
   transform: scaleX(0);
   transform-origin: left;
-<<<<<<< HEAD
   background: #638e90;
-=======
-  background: #21acb3;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .container {
   display: flex;
   max-width: 1550px;
+  min-width:550
   margin: 0 auto;
   flex: 1;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .container .checklist {
-  min-width: 350px;
-  max-width: 400px;
+  min-width: 450px;
+  max-width: 550px;
   margin: 15px 15px 0;
 }
 .container .checklist .checklist-container {
@@ -220,21 +184,13 @@ a:hover {
   font-size: 2.125em;
   font-weight: 500;
   margin: 0;
-<<<<<<< HEAD
   color: #4e4e4e;
-=======
-  color: #e6e6e6;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .checklist__title-border {
   display: block;
   width: 350px;
   margin-top: 8px;
-<<<<<<< HEAD
   border-bottom: 2px solid #6e75cd;
-=======
-  border-bottom: 2px solid #21acb3;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   box-shadow: 0 15px 15px -15px rgba(33, 16, 118, 0.5);
 }
 .checklist__percentage-border {
@@ -245,11 +201,7 @@ a:hover {
   transition: transform 350ms ease;
   transform: scaleX(0);
   transform-origin: left;
-<<<<<<< HEAD
   background: rgb(82, 105, 205);
-=======
-  background: #57d490;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .checklist-item {
   display: block;
@@ -263,19 +215,11 @@ a:hover {
   height: 20px;
   cursor: pointer;
   transition: background 150ms ease;
-<<<<<<< HEAD
   border: 2px solid #4d2eeb;
   border-radius: 3px;
 }
 .checkbox:hover {
   background: rgba(66, 113, 231, 0.5);
-=======
-  border: 2px solid #211076;
-  border-radius: 3px;
-}
-.checkbox:hover {
-  background: rgba(33, 16, 118, 0.5);
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .checkbox:after {
   position: absolute;
@@ -287,13 +231,8 @@ a:hover {
   transition: all 325ms ease;
   transform: rotate(45deg) scale(0);
   opacity: 0;
-<<<<<<< HEAD
   border-right: 2px solid #ebebeb;
   border-bottom: 2px solid #ebebeb;
-=======
-  border-right: 2px solid #bf6bfe;
-  border-bottom: 2px solid #bf6bfe;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .checklist-item__title {
   font-size: 1.125em;
@@ -307,11 +246,7 @@ a:hover {
 }
 .checklist-item__title:focus,
 .checklist-item__title:hover {
-<<<<<<< HEAD
   color: #4529fd;
-=======
-  color: #dcdcdc;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 input[type=checkbox] {
   display: none;
@@ -320,11 +255,7 @@ input[type=checkbox]:checked ~ .checkbox {
   -webkit-animation: wiggle 0.4s ease;
   animation: wiggle 0.4s ease;
   border-color: transparent;
-<<<<<<< HEAD
   background: #3975ff;
-=======
-  background: #211076;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 input[type=checkbox]:checked ~ .checkbox:after {
   transform: rotate(45deg) scale(1);
@@ -397,11 +328,7 @@ input[type=checkbox]:checked ~ .checklist-item__title {
   transform: translateY(-50%);
   transform-origin: center center;
   outline: 1px solid transparent;
-<<<<<<< HEAD
   background: #272af7;
-=======
-  background: #211076;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .line:after {
   display: block;
@@ -412,20 +339,12 @@ input[type=checkbox]:checked ~ .checklist-item__title {
   transform: rotate(90deg);
   transform-origin: center center;
   outline: 1px solid transparent;
-<<<<<<< HEAD
   background: #272af7;
-=======
-  background: #211076;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .closed.line {
   top: 45%;
   transform: rotate(180deg);
-<<<<<<< HEAD
   background: #272af7;
-=======
-  background: #bf6bfe;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
 .closed.line:after {
   transform: rotate(0);
@@ -473,11 +392,7 @@ input[type=checkbox]:checked ~ .checklist-item__title {
   width: 37px;
   height: 37px;
   cursor: pointer;
-<<<<<<< HEAD
   border: 2px solid #151515;
-=======
-  border: 2px solid #e6e6e6;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   border-radius: 3px;
 }
 .social-buttons a.social-buttons__twitter {
@@ -500,11 +415,7 @@ footer {
   margin-top: 1.25em;
   padding: 0.85em 1.85em;
   text-align: center;
-<<<<<<< HEAD
   border-top: 1px solid #494ef3;
-=======
-  border-top: 1px solid #57b26e;
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
   align-self: center;
 }
 footer span {
@@ -556,8 +467,5 @@ footer span {
     widows: 3;
     page-break-after: avoid;
   }
-<<<<<<< HEAD
   
-=======
->>>>>>> d64f704811ac370e633c277f4d8dbd4483f92d6b
 }
