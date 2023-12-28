@@ -467,7 +467,7 @@ footer span {
     page-break-after: avoid;
   }
   
-  @media screen and (max-width: 600px) { /* Covers most mobile devices, including larger ones */
+  @media screen and (max-width: 250px) { /* Covers most mobile devices, including larger ones */
     .container {
       flex-direction: column;
       align-items: center;
