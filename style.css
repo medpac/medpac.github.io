@@ -164,6 +164,7 @@ a:hover {
 }
 .container {
   display: flex;
+  font-size: 1.8em;
   max-width: 1550px;
   min-width:550
   margin: 0 auto;
@@ -352,7 +353,7 @@ input[type=checkbox]:checked ~ .checklist-item__title {
 }
 .info-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 1.063em;
+  font-size: 1.4em;
   line-height: 1.4;
   overflow: hidden;
   max-height: 0;
