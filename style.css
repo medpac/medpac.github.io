@@ -164,18 +164,18 @@ a:hover {
 }
 .container {
   display: flex;
-  font-size: 1.4em;
-  max-width: 1000px;
+  font-size: 1.2em;
+  max-width: 1550px;
   min-width: 500px
   margin: 0 auto;
   flex: 1;
   flex-wrap: wrap;
-  justify-content: :left;
+  justify-content: space-around;
 }
 .container .checklist {
   min-width: 500px;
   max-width: 550px;
-  margin: 10px 10px 0;
+  margin: 15px 15px 0;
 }
 .container .checklist .checklist-container {
   margin: 0;
@@ -189,14 +189,14 @@ a:hover {
 }
 .checklist__title-border {
   display: block;
-  width: 450px;
+  width: 350px;
   margin-top: 8px;
   border-bottom: 2px solid #6e75cd;
   box-shadow: 0 15px 15px -15px rgba(33, 16, 118, 0.5);
 }
 .checklist__percentage-border {
   display: block;
-  width: 450px;
+  width: 350px;
   height: 6px;
   margin-bottom: 8px;
   transition: transform 350ms ease;
