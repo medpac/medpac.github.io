@@ -491,9 +491,9 @@ footer span {
     color: white;
     font-size: 20px;
   }
+}
 
- 
-@media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .container {
         padding: 0 10px; /* Reduce padding on smaller screens */
         max-width: 100%; /* Allow container to use full width */
@@ -525,6 +525,5 @@ footer span {
 
     /* Add any other styles you need to adjust for mobile here */
 }
+
   
-  
-}
