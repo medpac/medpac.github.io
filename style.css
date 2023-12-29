@@ -488,7 +488,7 @@ footer span {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
   }
 
