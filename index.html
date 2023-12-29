@@ -8,17 +8,194 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 
+<style>
+.turbo-overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  z-index: 1000; /* Ensures it's on top of other elements */
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+.question-container {
+  height: 450px; /* Adjust this value based on your needs */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.overlay-question {
+  /* Ensure the question text fits well within the container */
+  overflow-y: auto; /* Allows scrolling if the text is too long */
+  margin-bottom: 15px; /* Space between the question and buttons */
+  height: 100%; /* Adjust this value to allocate space for the question */
+}
+
+.response-button {
+  /* Common styles for response buttons */
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+}
+
+
+.response-button-container {
+    display: flex;
+    justify-content: center;
+    max-width: 400px; /* Constrain the width */
+    margin: 0 auto; /* Center the container */
+    gap: 20px; /* Spacing between buttons */
+}
+
+.yes-button {
+    font-size: 32px; /* Slightly larger font size */
+    padding: 45px 45px; /* Larger padding for a bigger button */
+    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(233, 233, 233, 0.75);
+    color: #5332f8; /* Color matching the border */
+    box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
+    border: 1px solid #5332f8;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.no-button {
+    font-size: 32px;
+    padding: 10px 20px; /* Smaller padding for a smaller button */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(233, 233, 233, 0.75);
+    color: #5332f8; /* Color matching the border */
+    box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
+    border: 1px solid #5332f8;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.yes-button:hover, .no-button:hover {
+    box-shadow: 0 6px 8px rgba(33, 16, 118, 0.15), 0 2px 4px rgba(33, 16, 118, 0.12);
+    transform: translateY(-5px);
+}
+
+.yes-button:active, .no-button:active {
+    box-shadow: 0 2px 3px rgba(33, 16, 118, 0.1);
+    transform: translateY(5px);
+}
+
+
+
+
+
+</style>
+
+
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
+
 <header>
+
+
+
+  
  <h1 class="title"><a href="https://www.clinicchecklist.com">Surgical Safety Checklist</a></h1>
  <div class="progress">
   <span class="progress__count">0/X</span>
   <input class="progress__reset" type="reset" value="Reset" title="Reset Checkboxes" tabindex="0">
+
+  <button class="progress__reset" id="turboModeButton">SUPER FAST Mode</button>
+
+  <div id="turboModeOverlay" class="turbo-overlay hidden">
+
+      SUPER FAST Turbo Mode is ON
+      <br>
+      <div id="questionContainer" class="question-container">
+        <p id="overlayQuestion" class="overlay-question"></p>
+        <button id="yesButton" class="response-button yes-button">Yes</button>
+        <button id="noButton" class="response-button no-button">No</button>
+      </div>
+
+      <button id="closeOverlayButton">Close</button>
+  </div>
+
+  
+  
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+  // ... existing code ...
+
+  const questions = document.querySelectorAll('.checklist-item__title');
+  let currentQuestionIndex = 0;
+
+  document.getElementById('turboModeButton').onclick = function() {
+    document.getElementById('turboModeOverlay').style.display = 'block';
+    showNextQuestion(0);
+  };
+
+  document.getElementById('closeOverlayButton').onclick = function() {
+    document.getElementById('turboModeOverlay').style.display = 'none';
+  };
+
+  document.getElementById('yesButton').onclick = function() {
+    recordAnswer(true);
+    showNextQuestion(currentQuestionIndex + 1);
+  };
+
+  document.getElementById('noButton').onclick = function() {
+    recordAnswer(false);
+    showNextQuestion(currentQuestionIndex + 1);
+  };
+
+  function showNextQuestion(index) {
+    if (index >= questions.length) {
+      document.getElementById('turboModeOverlay').style.display = 'none';
+      return;
+    }
+    document.getElementById('overlayQuestion').textContent = questions[index].textContent;
+    currentQuestionIndex = index;
+  }
+
+  function recordAnswer(answer) {
+    let correspondingCheckbox = questions[currentQuestionIndex].previousElementSibling.previousElementSibling;
+    correspondingCheckbox.checked = answer;
+    updateProgress(); // Call this function to update the progress tally
+}
+
+  function updateProgress() {
+      const totalCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
+      const checkedCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked').length;
+      document.querySelector('.progress__count').textContent = `${checkedCheckboxes}/${totalCheckboxes}`;
+  }
+});
+
+
+  </script>
+
+  
+
   <span class="progress__border"></span>
   <span class="progress__bar"></span>
+  
+  
+ 
  </div>
+
+
 
 </header>
 <div class="container">
@@ -27,43 +204,7 @@
   <span class="checklist__title-border"></span>
   <span class="checklist__percentage-border"></span>
   <ul class="checklist-container">
-
-   <li class="checklist-item">
-    <input id="" type="checkbox" /><label for="" class="checkbox"></label><span class="checklist-item__title">Images Optimized</span>
-    <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
-                    <span class="line"></span>
-                </button>
-    <div class="info-container">
-     <div class="info">
-      <ul>
-       <li>Compress all your images using either web processors such as <a href="http://optimizilla.com/" target="_blank" rel="noopener">Optimizilla.com</a> and <a href="https://compressor.io/compress" target="_blank" rel="noopener">Compressor.io</a>, or
-        desktop apps such as <a target="_blank" rel="noopener" href="http://nikkhokkho.sourceforge.net/static.php?page=FileOptimizer">FileOptimizer</a> and <a target="_blank" rel="noopener" href="https://imageoptim.com/mac">ImageOptim</a>.
-       </li>
-       <li>Generate the exact image size for each element instead of resizing it with CSS/HTML as this can be a heavy process for the browser to perform.
-       </li>
-       <li>Utilize <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS">Image
-                                Sprites</a> to save on HTTP requests and bandwidth.
-       </li>
-      </ul>
-     </div>
-    </div>
-   </li>
-   <li class="checklist-item">
-    <input id="" type="checkbox" /><label for="" class="checkbox"></label><span class="checklist-item__title">Reduced Page Weight &amp; Requests</span>
-    <button class="checklist-item__expand" aria-label="Toggle Info" title="Toggle More Information">
-                    <span class="line"></span>
-                </button>
-
-    <div class="info-container">
-     <div class="info">Here are some tips to keep your page weight under 2MB and 50 requests:
-      <ul>
-       <li>Limit 3rd party libraries &amp; scripts</li>
-       <li>Load resources &amp; requests asynchronously</li>
-       <li>Consider a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN</a> for static assets &amp; pages
-       </li>
-      </ul>
-     </div>
-    </div>
+ 
    </li>
      <!-- Before induction of anaesthesia -->
      <li class="checklist-item">
