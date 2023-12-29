@@ -239,7 +239,7 @@ a:hover {
   font-size: 1.125em;
   line-height: 1.25;
   display: inline-block;
-  width: calc(100% - 48px);
+  width: calc(100% - 25px);
   margin-left: 8px;
   cursor: pointer;
   transition: color 250ms ease;
@@ -373,7 +373,7 @@ input[type=checkbox]:checked ~ .checklist-item__title {
   border-bottom: 1px solid #b5adde;
 }
 .checklist .open .info-container {
-  max-height: 500px;
+  max-height: 400px;
   transition-timing-function: ease-out;
 }
 .social {
