@@ -492,6 +492,39 @@ footer span {
     font-size: 20px;
   }
 
+ 
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Reduce padding on smaller screens */
+        max-width: 100%; /* Allow container to use full width */
+        min-width: auto; /* Remove min-width restriction */
+    }
+
+    .container .checklist {
+        min-width: auto; /* Remove min-width for checklist */
+        max-width: 100%; /* Allow checklist to use full width */
+    }
+
+    .question-container {
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .yes-button, .no-button {
+        font-size: 24px; /* Adjust font size for mobile */
+        padding: 25px 25px; /* Adjust padding for mobile */
+    }
+
+    .response-button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap between buttons */
+    }
+
+    .progress__reset {
+        padding: 0 10px; /* Adjust padding for reset button */
+    }
+
+    /* Add any other styles you need to adjust for mobile here */
+}
   
   
 }
